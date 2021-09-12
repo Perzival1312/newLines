@@ -9,6 +9,8 @@ from flask import (
     session,
     jsonify,
 )
+
+
 import mongoengine
 from pymongo import MongoClient
 from mongoengine import Document, connect, StringField
@@ -16,9 +18,13 @@ from flask_mongoengine import QuerySet
 from flask_scss import Scss
 import os, json, requests, PIL
 from PIL import Image, ImageDraw
+from flask_assets import Environment, Bundle
+
 import utility, config_module, twitter, imgur
 from nth_order_markov_for_web import Markov
-from flask_assets import Environment, Bundle
+
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -177,3 +183,7 @@ def load_sources():
         )
         new_text.save()
     return redirect("/", code=302)
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
