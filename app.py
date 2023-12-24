@@ -16,9 +16,13 @@ from mongoengine import Document, connect, StringField
 from flask_scss import Scss
 import os, json, requests, PIL
 from PIL import Image, ImageDraw
+from flask_assets import Environment, Bundle
+
 import utility, config_module, twitter, imgur
 from nth_order_markov_for_web import Markov
-from flask_assets import Environment, Bundle
+
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
