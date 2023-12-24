@@ -1,6 +1,7 @@
 class_projects/
 general-noncommited/
 Scaper/
+Old/
 __pycache__/
 .pytest_cache/
 venv/

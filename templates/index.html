@@ -6,7 +6,7 @@
     <title>tweet-gen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Prevent Favicon.ico request -->
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <!-- typed.js library -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <!-- Sassy CSS -->
@@ -23,12 +23,12 @@
 
     <div class="Sharing">
         <h3>Share</h3>
-        
+
         <form action="/share/twitter" method="POST" id="tShareSent">
             <input type="text" name="sentence" value="{{test}}" hidden=true>
             <input type="text" name="source" value="{{sentence_source}}" hidden=true id="source-for-selector">
         </form>
-        
+
         <button class="twitter" type="submit" value="Submit" form="tShareSent"> Share to Twitter</button>
 
         <button class="imgur" type="submit" value="Submit" form="tShareSent" formaction="/share/imgur">
@@ -36,7 +36,7 @@
     </div>
 
     <div class="New-Sentence">
-        <button class="new-button" onclick="new_sentence();"> New Sentence </button>
+        <button class="new-button" id="new-button" onclick="AJAX_new_sentence();"> New Sentence </button>
         <select class="new-select" id="source-selector" onchange="location.href=`/sentence/${this.value}`">
             <option selected="selected" value="frankenstein">Frankenstein</option>
             <option value="modestproposal">A Modest Proposal</option>
@@ -62,7 +62,7 @@
             <option value="tomcabin">Uncle Toms Cabin</option>
             <option value="warofworlds">War of the Worlds</option>
             <option value="wizardoz">Wizard of Oz</option> -->
-        </select> 
+        </select>
     </div>
 
     <div class="Show-Saved">

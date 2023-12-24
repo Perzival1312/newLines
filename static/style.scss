@@ -6,7 +6,7 @@ body {
     font-family: sans-serif;
     background: rgb(0, 0, 0);
     color: aqua;
-    
+
     button {
         border-radius: 6px;
     }
@@ -60,13 +60,13 @@ body {
             cursor: pointer;
         }
     }
-    
+
     .New-Sentence {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 200px;
-        height: 12vh;
+        height: 8vh;
         .new-button {
             border: none;
             height: 45px;
@@ -92,14 +92,14 @@ body {
             padding-bottom: 2px;
         }
     }
-    
+
     .Show-Saved {
         color: rgb(0, 0, 0);
         text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
         display: flex;
         flex-direction: column;
         .imgur {
-            background-image: url("./images/imgur_logo.png");  
+            background-image: url("./images/imgur_logo.png");
             background-color: rgb(54, 190, 116);
             height: 40px;
             width: 100px;
@@ -209,4 +209,8 @@ hr {
 	height: 10px;
 	border: 0;
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.loading {
+    background-color: #f00
 }

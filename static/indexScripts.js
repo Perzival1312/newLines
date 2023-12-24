@@ -2,6 +2,7 @@ const body = document.getElementsByTagName('body')[0];
 const all = document.getElementsByTagName("*");
 const mySelect = document.getElementById('source-selector');
 let sourceName = document.getElementById('source-for-selector').defaultValue;
+const newButton = document.getElementById('new-button');
 
 let beginSliceInd = sourceName.indexOf('/');
 let endSliceIndex = sourceName.indexOf('.');
@@ -63,7 +64,10 @@ function resetTyped(newTexts) {
 };
 
 // Vanilla
-function new_sentence() {
+function AJAX_new_sentence(callback) {
+    let oColor = newButton.style.backgroundColor
+    // edit css
+    newButton.style.backgroundColor='#f00'
     const httpRequest = new XMLHttpRequest()
     httpRequest.open('POST', `/sentence/${sourceName}`, true)
     httpRequest.send()
@@ -71,7 +75,13 @@ function new_sentence() {
         if(this.readyState == 4 && this.status == 200) {
             sentence = this.responseText
             resetTyped(sentence)
+            // revert css
+            // callback
+            newButton.style.backgroundColor=oColor
         }
     }
 }
- 
+
+function changeCSS() {
+    newButton.classList.add('loading')
+}

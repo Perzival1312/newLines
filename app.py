@@ -9,10 +9,10 @@ from flask import (
     session,
     jsonify,
 )
-import mongoengine
+# import mongoengine
 from pymongo import MongoClient
 from mongoengine import Document, connect, StringField
-from flask_mongoengine import QuerySet
+# from flask_mongoengine import QuerySet
 from flask_scss import Scss
 import os, json, requests, PIL
 from PIL import Image, ImageDraw
@@ -157,7 +157,7 @@ def Imgur_share():
 
 @app.route("/load_sources")
 def load_sources():
-    sources.drop_collection()
+    # sources.drop_collection()
     texts_list, word_list = [], []
     f = open("texts.txt", "r")
     texts_list = f.readlines()
@@ -177,3 +177,7 @@ def load_sources():
         )
         new_text.save()
     return redirect("/", code=302)
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
